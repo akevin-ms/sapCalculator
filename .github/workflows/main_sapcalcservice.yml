@@ -1,11 +1,10 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy WAR app to Azure Web App - sapcalcservice
+name: Build and deploy JAR app to Azure Spring App
 
 env:
   ASC_PACKAGE_PATH: ${{ github.workspace }}
-  AZURE_SUBSCRIPTION: 3836ecf9-88bd-4f4d-8456-a1fe4e5a3d65
 
 on:
   push:
@@ -38,7 +37,7 @@ jobs:
       - name: deploy to production with artifact
         uses: azure/spring-cloud-deploy@v1
         with:
-          azure-subscription: ${{ env.AZURE_SUBSCRIPTION }}
+          azure-subscription: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           action: Deploy
           service-name: github-action-test-spring
           app-name: sap-calculator
