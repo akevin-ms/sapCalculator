@@ -41,6 +41,6 @@ jobs:
           azure-subscription: ${{ env.AZURE_SUBSCRIPTION }}
           action: Deploy
           service-name: github-action-test-spring
-          app-name: sapCalculator
+          app-name: sap-calculator
           use-staging-deployment: false
           package: ${{ env.ASC_PACKAGE_PATH }}/**/*.jar
